@@ -1,0 +1,53 @@
+<main>
+
+  <!--topbar-->
+  <div class="topbar">
+    <button mat-mini-fab color="primary" matTooltip="Retour" (click)="onGoBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div *ngIf="isLoggedIn" class="icons-group">
+      <button mat-mini-fab color="accent" matTooltip="Editer le jeu" (click)="onEdit()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent" matTooltip="Suprimer le jeu" (click)="onDelete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="content" *ngIf="game">
+
+    <!--cover - title - year-->
+    <div class="title">
+      <img [src]="game.cover" alt="Couverture boite du jeu :  {{game.title}}">
+      <div>
+        <h2>{{game.title}}</h2>
+        <p>{{game.yearPub}}</p>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <!--players - age - duration -->
+      <div class="info">
+        <div class="players">
+          <mat-icon>groups</mat-icon>
+          <p> {{game.playerMin}} - {{game.playerMax}}</p>
+        </div>
+        <div class="age">
+          <mat-icon>child_care</mat-icon>
+          <p>+{{game.age}}</p>
+        </div>
+        <div class="duration">
+          <mat-icon>schedule</mat-icon>
+          <p>{{game.durationMinutesMin}} - {{game.durationMinutesMax}}</p>
+        </div>
+      </div>
+
+      <!--description-->
+      <div class="description">
+        <h3>Description</h3>
+        <p>{{game.description}}</p>
+      </div>
+    </div>
+  </div>
+
+</main>

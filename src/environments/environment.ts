@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // GAME_URL: 'http://localhost:3000/api/games',
+  // UPLOAD_URL: 'http://localhost:3000/api/upload',
+  // AUTH_URL: 'http://localhost:3000/api/login'
+  GAME_URL: 'https://ludodb-api.onrender.com/api/games',
+  UPLOAD_URL: 'https://ludodb-api.onrender.com/api/upload',
+  AUTH_URL: 'https://ludodb-api.onrender.com/api/login'
 };
 
 /*

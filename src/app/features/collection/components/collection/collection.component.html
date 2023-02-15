@@ -1,0 +1,19 @@
+<main>
+  <div class="topbar">
+    <h2>Collection</h2>
+    <button *ngIf="isLoggedIn" mat-mini-fab color="primary" matTooltip="Ajouter un jeu" (click)="onAddGame()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="content">
+    <mat-card class="card" *ngFor="let game of gameList" (click)=goTo(game)>
+      <mat-card-content>
+        <img mat-card-image [src]="game.cover" alt="Couverture boite du jeu : {{game.title}}">
+      </mat-card-content>
+      <div>
+        <h3>{{game.title}}</h3>
+        <p>{{game.yearPub}}</p>
+      </div>
+    </mat-card>
+  </div>
+</main>

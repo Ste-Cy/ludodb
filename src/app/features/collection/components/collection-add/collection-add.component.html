@@ -1,0 +1,9 @@
+<main>
+  <div class="topbar">
+    <button mat-mini-fab color="primary" matTooltip="Retour" (click)="onGoBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h2>Ajouter le jeu</h2>
+  </div>
+  <app-collection-game-form (formEvent)="onFormEvent($event)"></app-collection-game-form>
+</main>

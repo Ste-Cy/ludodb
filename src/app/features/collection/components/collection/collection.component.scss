@@ -1,0 +1,25 @@
+.content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+   font-size: 1rem;
+  }
+  img {
+    width: 300px;
+  }
+  &:hover {
+    transform: scale(1.02)
+  }
+}
+

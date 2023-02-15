@@ -1,0 +1,88 @@
+<form [formGroup]="form">
+  <!--Image upload -->
+  <div class="img-upload">
+    <button type="button" mat-stroked-button (click)="fileUplaoder.click()">Télécharger une image de couverture</button>
+    <input #fileUplaoder type="file" formControlName="cover" formenctype="multipart/form-data"
+      accept="image/jpeg,image/png,image/webp" (change)="onFileChange($event)" />
+    <div *ngIf="imagePreview !== '' && imagePreview && form.get('cover')?.valid">
+      <img [src]="imagePreview">
+    </div>
+  </div>
+  <div class="wrapper">
+    <!--Title-->
+    <div>
+      <mat-form-field appearance="fill" class="input">
+        <mat-label>Titre du jeu</mat-label>
+        <input type="text" matInput formControlName="title">
+        <mat-error>Ce champ est requis</mat-error>
+      </mat-form-field>
+    </div>
+    <!--yearPub-->
+    <div>
+      <mat-form-field appearance="fill" class="input">
+        <mat-label>Année de sortie</mat-label>
+        <input type="number" matInput formControlName="yearPub">
+      </mat-form-field>
+    </div>
+    <!--playerGroup-->
+    <div [ngClass]="{'player-error': displayPlayerGroupError$ |async }" [formGroup]="playerGroup">
+      <!--playerMin-->
+      <div class="input-group">
+        <label>Nombre de joueur minimum</label>
+        <mat-form-field appearance="fill" floatLabel="always" class="input-number">
+          <input type="number" min="1" matInput formControlName="playerMin">
+        </mat-form-field>
+      </div>
+      <!--playerMax-->
+      <div class="input-group">
+        <label>Nombre de joueur maximum</label>
+        <mat-form-field appearance="fill" floatLabel="always" class="input-number">
+          <input type="number" min="1" matInput formControlName="playerMax">
+        </mat-form-field>
+      </div>
+      <!--players error message -->
+      <div class="error-message">
+        <small *ngIf="displayPlayerGroupError$ | async">Le nombre de joueur maximum ne peut pas être inférieur au nombre
+          minimum</small>
+      </div>
+    </div>
+    <!--durationGroup-->
+    <div [ngClass]="{'duration-error': displayDurationGroupError$ |async }" [formGroup]="durationGroup">
+      <!--durationMin-->
+      <div class="input-group">
+        <label>Durée (en minutes) minimum</label>
+        <mat-form-field appearance="fill" floatLabel="always" class="input-number">
+          <input type="number" min="5" step="5" matInput formControlName="durationMin">
+        </mat-form-field>
+      </div>
+      <!--durationMax-->
+      <div class="input-group">
+        <label>Durée (en minutes) maximum</label>
+        <mat-form-field appearance="fill" floatLabel="always" class="input-number">
+          <input type="number" min="5" step="5" matInput formControlName="durationMax">
+        </mat-form-field>
+      </div>
+      <!--duration error message -->
+      <div class="error-message">
+        <small *ngIf="displayDurationGroupError$ | async">La durée maximum ne peut pas être inférieur à la durée
+          minimum</small>
+      </div>
+    </div>
+    <!--age min-->
+    <div class="input-group">
+      <label>age minimum</label>
+      <mat-form-field appearance="fill" floatLabel="always" class="input-number">
+        <input type="number" min="1" matInput formControlName="age">
+      </mat-form-field>
+    </div>
+  </div>
+  <!--description-->
+  <div>
+    <mat-form-field appearance="fill" class="input">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  </div>
+  <!--send -->
+  <button [disabled]="!form.valid" mat-raised-button color="primary" (click)="onSubmit()">Valider</button>
+</form>

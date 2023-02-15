@@ -1,0 +1,45 @@
+.img-upload {
+  margin-bottom: 2rem;
+
+  // input {
+  //   display: none;
+  // }
+
+  img {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.wrapper {
+  width: 300px;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  label {
+    margin-right: 1rem;
+  }
+}
+
+.input {
+  width: 100%;
+  max-width: 350px;
+}
+
+.input-number {
+  width: 80px;
+}
+
+textarea {
+  height: 100px;
+}
+
+
+.error-message {
+  color: red;
+}

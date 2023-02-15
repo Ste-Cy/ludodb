@@ -1,0 +1,67 @@
+.icons-group button {
+  margin-left: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+
+
+.title {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 4rem;
+  img {
+    width: 40vw;
+    max-width: 500px;
+   
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+}
+
+.info {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 340px;
+  height: 80px;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  border: 2px solid #ccc;
+  border-radius: 1rem;
+  
+  
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .material-icons {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.description {
+  font-size: 1rem;
+  width: 350px;
+  h3 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,26 @@
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <!-- username-->
+    <mat-form-field appearance="fill">
+      <mat-label>Nom d'utilisateur</mat-label>
+      <input type="text" matInput formControlName="username">
+      <mat-error>Ce champ est requis</mat-error>
+    </mat-form-field>
+    <!--password-->
+    <mat-form-field appearance="fill">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <input type="password" matInput>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error>Ce champ est requis</mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button [mat-dialog-close]="form" [disabled]="form.invalid" mat-raised-button color="primary">Se connecter</button>
+
+
+</mat-dialog-actions>

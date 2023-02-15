@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="header">
+  <h1 (click)="onGoHome()">LudoDB</h1>
+  <div *ngIf=" isLoggedIn">
+    <button mat-raised-button (click)="onLogout()">Déconnexion</button>
+  </div>
+  <div *ngIf="!isLoggedIn">
+    <button mat-raised-button (click)="onLogin()">Se connecter</button>
+  </div>
+</mat-toolbar>
